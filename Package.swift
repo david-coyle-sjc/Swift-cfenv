@@ -18,15 +18,15 @@ import PackageDescription
 
 let package = Package(
     name: "CloudFoundryEnv",
-    targets: [
-      Target(
-        name: "CloudFoundryEnv",
-        dependencies: []
-      ),
-    ],
+//    testDependencies: [],
+//    targets: [
+//      Target(
+//        name: "CloudFoundryEnv",
+//        dependencies: []
+//      ),
+//    ],
     dependencies: [
       //.Package(url: "https://github.com/behrang/YamlSwift.git", majorVersion: 1),
-      .Package(url: "https://github.com/IBM-Swift/SwiftyJSON.git", majorVersion: 11)
-    ],
-    testDependencies: []
+      .Package(url: "https://github.com/IBM-Swift/SwiftyJSON.git", majorVersion: 14)
+    ]
 )
