@@ -89,7 +89,8 @@ public struct AppEnv {
       let instanceId = app["instance_id"].string,
       let instanceIndex = app["instance_index"].int,
       let port = app["port"].int,
-      let startedAt: NSDate = dateUtils.convertStringToNSDate(dateString: app["started_at"].string),
+        //let startedAt: NSDate = dateUtils.convertStringToNSDate(dateString: app["started_at"].string),
+      let startedAt: Date = dateUtils.convertStringToDate(dateString: app["started_at"].string),
       let spaceId = app["space_id"].string else {
         return nil
       }

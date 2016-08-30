@@ -33,7 +33,7 @@ public struct DateUtils {
   * Converts to a NSDate object a string that comforms to the following
   * format yyyy-MM-dd HH:mm:ss ZZZ.
   */
-  public func convertStringToNSDate(dateString: String?) -> NSDate? {
+  public func convertStringToDate(dateString: String?) -> Date? {
     guard let dateStr = dateString else {
       return nil
     }
@@ -41,7 +41,7 @@ public struct DateUtils {
     let nsDate: Date?
     nsDate = dateFormatter.date(from: dateStr)
 
-    return nsDate as NSDate?
+    return nsDate
   }
 
   /**
