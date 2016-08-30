@@ -39,11 +39,7 @@ public struct DateUtils {
     }
 
     let nsDate: Date?
-    #if os(Linux)
-      nsDate = dateFormatter.dateFromString(dateStr)
-    #else
-      nsDate = dateFormatter.date(from: dateStr)
-    #endif
+    nsDate = dateFormatter.date(from: dateStr)
 
     return nsDate as NSDate?
   }
@@ -56,11 +52,7 @@ public struct DateUtils {
     guard let nsDateObj = nsDate else {
       return nil
     }
-    #if os(Linux)
-      let dateString: String? = dateFormatter.string(from: nsDateObj as NSDate)
-    #else
-      let dateString: String? = dateFormatter.string(from: nsDateObj as Date)
-    #endif
+    let dateString: String? = dateFormatter.string(from: nsDateObj as Date)
     return dateString
   }
 
