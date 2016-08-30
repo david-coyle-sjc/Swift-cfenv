@@ -48,11 +48,11 @@ public struct DateUtils {
   * Converts a NSDate object to a string that follows the following format:
   * yyyy-MM-dd HH:mm:ss ZZZ.
   */
-  public func convertNSDateToString(nsDate: NSDate?) -> String? {
-    guard let nsDateObj = nsDate else {
+  public func convertDateToString(nsDate: Date?) -> String? {
+    guard let _ = nsDate else {
       return nil
     }
-    let dateString: String? = dateFormatter.string(from: nsDateObj as Date)
+    let dateString: String? = dateFormatter.string(from: nsDate!)
     return dateString
   }
 
