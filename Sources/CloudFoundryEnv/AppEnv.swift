@@ -17,10 +17,6 @@
 import Foundation
 import SwiftyJSON
 
-#if os(Linux)
-  public typealias URLQueryItem = NSURLQueryItem
-#endif
-
 public struct AppEnv {
 
   public let isLocal: Bool
@@ -208,11 +204,7 @@ public struct AppEnv {
       var urlQueryItems: [URLQueryItem] = []
       for queryItem in queryItems {
         if let name = queryItem["name"].string {
-          #if os(Linux)
-            let urlQueryItem = NSURLQueryItem(name: name, value: queryItem["value"].string)
-          #else
             let urlQueryItem = URLQueryItem(name: name, value: queryItem["value"].string)
-          #endif
           urlQueryItems.append(urlQueryItem)
         }
       }
